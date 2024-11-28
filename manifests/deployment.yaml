@@ -1,0 +1,21 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: thanak81-nextgitlab-deployment
+  labels:
+    app: thanak81-nextgitlab
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: thanak81-nextgitlab
+  template:
+    metadata:
+      labels:
+        app: thanak81-nextgitlab
+    spec:
+      containers:
+        - name: thanak81-nextgitlab-container
+          image: pipejet/thanak81-nextgitlab:0
+          ports:
+            - containerPort: 3000
