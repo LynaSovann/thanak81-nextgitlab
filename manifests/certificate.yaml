@@ -1,0 +1,13 @@
+apiVersion: cert-manager.io/v1
+kind: Certificate
+metadata:
+  name: thanak81-nextgitlab-certificate
+  namespace: thanak81-nextgitlab
+spec:
+  secretName: thanak81-nextgitlab-secret-tls
+  commonName: thanak81-nextgitlab.assessify.org
+  dnsNames:
+  - thanak81-nextgitlab.assessify.org
+  issuerRef:
+    name: letsencrypt-prod
+    kind: ClusterIssuer
